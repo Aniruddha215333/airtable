@@ -221,7 +221,7 @@ def record_results_airtable():
             "answer": answer,
             "tokensUsed": 34,
             "userMessageFormat":messageFormat,
-            "base64ImageString":"sfgd"
+            "base64ImageString":base64ImageString
         }
 
         # Create the new record in Airtable
@@ -231,7 +231,7 @@ def record_results_airtable():
 
     except KeyError as e:
         # Handle missing keys in the input JSON more specifically if needed
-        return ("error")
+        return (str(e))
 
 
 @app.route('/register_user_airtable', methods=['POST']) # Changed route slightly
