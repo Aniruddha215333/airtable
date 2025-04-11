@@ -201,6 +201,7 @@ def record_results_airtable():
         record_id = data.get('id') # Changed variable name slightly for clarity
         messageFormat=data.get('messageFormat')
         base64ImageString=data.get('base64ImageString')
+        tokens=base64ImageString=data.get('tokens')
 
         # Initialize Airtable API client and table
         airtable_api = Api(YOUR_API_KEY)
@@ -221,7 +222,8 @@ def record_results_airtable():
             "answer": answer,
             "tokensUsed": 34,
             "userMessageFormat":messageFormat,
-            "base64ImageString":base64ImageString
+            "base64ImageString":base64ImageString,
+            "tokensUsed":tokens
         }
 
         # Create the new record in Airtable
